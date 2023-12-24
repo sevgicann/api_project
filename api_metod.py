@@ -113,3 +113,14 @@ def collect_video_detay(youtube, video_ids):
             all_video_info.append(video_info)
             
     return pd.DataFrame(all_video_info)
+
+
+def filter_videos_by_year(df, year):
+    
+    filtered_df = df[df['publishedAt'].str.startswith(year)]
+    return filtered_df
+
+def add_keyword(df, column_name, keyword):
+    
+    df['Keywords'] = df[column_name].apply(lambda x: 'yazılım' if keyword in x.lower() else '')
+    return df
