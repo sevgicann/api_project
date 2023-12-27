@@ -122,5 +122,5 @@ def filter_videos_by_year(df, year):
 
 def add_keyword(df, column_name, keyword):
     
-    df['Keywords'] = df[column_name].apply(lambda x: 'yazılım' if keyword in x.lower() else '')
+    df['Keywords'] = df[column_name].apply(lambda x: 'python' if keyword in x.lower() else '')
     return df
